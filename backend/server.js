@@ -39,16 +39,27 @@ app.post("/complaints", async (req, res) => {
 app.get("/reg_complaints", async (req, res) => {
   const { serviced } = req.query;
   const { id } = req.query;
-  const servicedBoolean = serviced === "true" ? true : false;
-  try {
-    const complaints = await db
-      .collection("come")
-      .find({ serviced: servicedBoolean, id: id })
-      .toArray();
-    res.json(complaints);
-  } catch (error) {
-    console.error("Error teja fetching complaints:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+  console.log(id, "apache");
+  if (id === "admin") {
+    try {
+      const complaints = await db.collection("come").find({}).toArray();
+      res.json(complaints);
+    } catch (error) {
+      console.error("Error fetching complaints:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  } else {
+    const servicedBoolean = serviced === "true" ? true : false;
+    try {
+      const complaints = await db
+        .collection("come")
+        .find({ serviced: servicedBoolean, id: id })
+        .toArray();
+      res.json(complaints);
+    } catch (error) {
+      console.error("Error teja fetching complaints:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
   }
 });
 

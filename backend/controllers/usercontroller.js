@@ -8,7 +8,7 @@ const gentoken = require("../utils/jwt");
 const { ObjectId } = require("mongodb");
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { firstname, lastname, hostel, room, email, password } = req.body;
+  const { firstname, lastname, hostel, room, email, password, role } = req.body;
   console.log("usercontroller.js registerUser", req.body);
   const userExists = await collection.findOne({ email });
   console.log("userExists:", userExists);
@@ -29,6 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
     room,
     email,
     password: hashedPassword,
+    role,
   });
 
   if (user) {
@@ -43,8 +44,9 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const authenticate = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
-  const user = await collection.findOne({ email });
+  const { email, password, role } = req.body;
+  const user = await collection.findOne({ email, role });
+  console.log("usercontroller.js authenticate", user);
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
       email: user.email,
@@ -67,6 +69,7 @@ const authenticate_2 = asyncHandler(async (req, res) => {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       console.log("usercontroller.js authenticate_2");
       console.log(decoded.id);
+
       const user = await collection.findOne({ _id: new ObjectId(decoded.id) });
       console.log("Found user:", user);
       if (user) {
