@@ -1,0 +1,55 @@
+/* Servicedone.css */
+
+/* General Styles */
+.serviced-done-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.serviced-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.serviced-card-header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.serviced-card-body {
+  background-color: #ffffff;
+}
+
+.serviced-card-footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+/* Dark Theme Styles */
+.dark-theme .serviced-card-header,
+.dark-theme .serviced-card-footer {
+  background-color: #444;
+  color: #ddd;
+  border-color: #555;
+}
+
+.dark-theme .serviced-card-body {
+  background-color: #333;
+  color: #ddd;
+}
+
+.dark-theme .border-light {
+  border-color: #555 !important;
+}
+
+/* Light Theme Styles */
+.light-theme .serviced-card-header,
+.light-theme .serviced-card-footer {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.light-theme .serviced-card-body {
+  background-color: #ffffff;
+  color: #333;
+}

@@ -1,0 +1,117 @@
+/* Components_Css/MakeComplaints.css */
+
+/* Light theme styles */
+.container.light-theme {
+  color: #333; /* Dark text for light background */
+  /* transition: color 100s ease, background-color 0.3s ease; */
+  box-shadow: 0px 10px 10px 10px #242425;
+}
+
+.card.light-theme {
+  background-color: #f8f9fa; /* Light card background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header.light-theme {
+  color: #dce1e6; /* Dark text */
+  font-size: 1.25rem; /* Larger font size */
+  font-weight: 700; /* Bold font weight */
+  background: linear-gradient(to right, #a462eb, #2575fc); /* Smooth gradient */
+  padding: 1rem; /* Padding around header */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  transition: background 0.3s ease;
+}
+
+.card-body.light-theme {
+  color: #495057; /* Slightly darker text */
+  font-size: 1rem; /* Medium font size */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(200, 200, 255, 0.5) 100%
+  ); /* Subtle gradient */
+  padding: 1rem; /* Padding inside card body */
+  border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+  transition: background 0.3s ease;
+}
+
+.list-group-item.light-theme {
+  color: #212529; /* Dark text */
+  background: linear-gradient(to right, #e9ecef, #f8f9fa); /* Smooth gradient */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button {
+  background-color: #007bff; /* Primary button color */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: #fff; /* Light text */
+  border-radius: 5px; /* Rounded button corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker button on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Dark theme styles */
+.container.dark-theme {
+  color: #e9ecef; /* Light text for dark background */
+  /* transition: color 0.3s ease, background-color 0.3s ease; */
+  box-shadow: 0px 10px 10px 10px #ededf0;
+}
+
+.card.dark-theme {
+  background-color: #343a40; /* Darker card background */
+  box-shadow: 0 4px 12px rgba(85, 85, 85, 0.6); /* Dark shadow */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header.dark-theme {
+  color: #f8f9fa; /* Light text */
+  font-size: 1.25rem; /* Larger font size */
+  font-weight: 700; /* Bold font weight */
+  background: linear-gradient(to right, #434343, #2b2b2b); /* Dark gradient */
+  padding: 1rem; /* Padding around header */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  transition: background 0.3s ease;
+}
+
+.card-body.dark-theme {
+  color: #e9ecef; /* Light text */
+  font-size: 1rem; /* Medium font size */
+  background: radial-gradient(
+    circle,
+    rgba(100, 134, 107, 0.9) 0%,
+    rgba(90, 82, 82, 0.7) 100%
+  ); /* Dark gradient */
+  padding: 1rem; /* Padding inside card body */
+  border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+  transition: background 0.3s ease;
+}
+
+.list-group-item.dark-theme {
+  color: #e9ecef; /* Light text */
+  background: linear-gradient(to right, #2c2c2c, #1a1a1a); /* Dark gradient */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Dark shadow */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button {
+  background-color: #007bff; /* Primary button color */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: #fff; /* Light text */
+  border-radius: 5px; /* Rounded button corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker button on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}

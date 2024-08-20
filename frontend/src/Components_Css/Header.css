@@ -1,0 +1,71 @@
+.bg-body-tertiary {
+  background: linear-gradient(90deg, #47aaec 0%, #66a6e7 100%);
+  margin: 5px;
+}
+
+/* Header.css */
+
+.navbar {
+  background-color: #f8f9fa; /* Light background color */
+  border-bottom: 1px solid #1182f3; /* Border at the bottom */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Larger font size for brand */
+  font-weight: bold; /* Make the brand bold */
+  color: #007bff; /* Primary color for the brand */
+}
+
+.navbar-toggler {
+  border-color: #007bff; /* Color for the toggler border */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,..."); /* You can set a custom icon here */
+}
+
+.nav-link {
+  font-size: 1rem; /* Adjust font size for links */
+  color: #495057; /* Default link color */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Color on hover */
+}
+
+.nav-dropdown {
+  font-size: 1rem; /* Font size for dropdown items */
+}
+
+.nav-dropdown-item {
+  color: #495057; /* Color for dropdown items */
+}
+
+.nav-dropdown-item:hover {
+  background-color: #e9ecef; /* Background color on hover */
+}
+
+.nav-dropdown-divider {
+  border-top: 1px solid #e9ecef; /* Divider color */
+}
+
+.navbar-collapse {
+  justify-content: space-between; /* Space between links and dark mode toggle */
+}
+
+.dark-mode {
+  display: flex;
+  align-items: center; /* Center align dark mode toggle */
+}
+
+.dark-mode .btn {
+  background-color: #007bff; /* Button color for dark mode toggle */
+  color: #ffffff; /* Button text color */
+}
+
+.dark-mode .btn:hover {
+  background-color: #0056b3; /* Button hover color */
+}
+.btn:hover {
+  background-color: #0056b3; /* Button hover color */
+}

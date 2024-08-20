@@ -1,0 +1,75 @@
+/* DarkMode.css */
+.dark_mode {
+  display: flex;
+  align-items: center;
+}
+
+.dark_mode_input {
+  display: none;
+}
+
+.dark_mode_label {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  position: relative;
+  display: block;
+  background: #f7cb03;
+  border-radius: 50%;
+  box-shadow: inset 0px 5px 15px rgba(247, 167, 167, 0.4),
+    outset 0px -5px 15px rgba(247, 6, 6, 0.4);
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark_mode_label svg {
+  position: absolute;
+  width: 20px; /* Adjust size of icons */
+  height: 20px; /* Adjust size of icons */
+  transition: fill 0.3s;
+}
+
+.dark_mode_label .sun {
+  fill: #343433;
+  opacity: 1;
+}
+
+.dark_mode_label .moon {
+  fill: #c51515;
+  opacity: 0;
+}
+
+input:checked + .dark_mode_label {
+  background: #3d3c3c;
+}
+
+input:checked + .dark_mode_label .sun {
+  fill: #f7d110;
+  opacity: 0;
+}
+
+input:checked + .dark_mode_label .moon {
+  fill: #fff;
+  opacity: 1;
+}
+
+/* Background styles based on theme */
+[data-theme="light"] {
+  background-image: linear-gradient(
+    58.2deg,
+    rgba(40, 91, 212, 0.73) -3%,
+    rgba(171, 53, 163, 0.45) 49.3%,
+    rgba(255, 204, 112, 0.37) 97.7%
+  );
+  height: 100vh;
+}
+
+[data-theme="dark"] {
+  background-image: radial-gradient(
+    circle 815px at 23.4% -21.8%,
+    rgb(10, 11, 11) 0.2%,
+    rgb(22, 21, 21) 100.2%
+  );
+}

@@ -1,0 +1,11 @@
+.true {
+  background-color: rgb(23, 25, 23);
+  color: #f1eded;
+}
+.false {
+  background-color: white;
+  color: black;
+}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

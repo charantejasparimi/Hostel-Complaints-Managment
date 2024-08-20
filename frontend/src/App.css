@@ -1,0 +1,17 @@
+/* General styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* App.css */
+.app-background-true {
+  background-color: lightblue; /* Change to your desired color for true */
+  min-height: 100vh;
+}
+
+.app-background-false {
+  background-color: lightcoral; /* Change to your desired color for false */
+  min-height: 100vh;
+}

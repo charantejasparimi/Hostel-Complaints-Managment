@@ -1,0 +1,114 @@
+/* RequestComplaints.css */
+
+/* Common styles */
+.container {
+  max-width: 800px;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.card-body {
+  background: radial-gradient(
+    circle,
+    rgba(100, 134, 107, 0.9) 0%,
+    rgba(90, 82, 82, 0.7) 100%
+  ); /* Dark gradient */
+}
+
+.list-group-item {
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.list-group-item h5 {
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.text-end .btn {
+  margin-left: 0.5rem;
+}
+
+/* Light theme */
+.light-theme .container {
+  background-color: #f8f9fa;
+}
+
+.light-theme .card-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.light-theme .list-group-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.light-theme .text-end .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.light-theme .text-end .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Dark theme */
+
+.dark-theme .card-header {
+  background-color: #495057;
+  color: #adb5bd;
+}
+
+.dark-theme .list-group-item {
+  background-color: #495057;
+  border: 1px solid #6c757d;
+  color: #adb5bd;
+}
+
+.dark-theme .text-end .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.dark-theme .text-end .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.dark-theme .list-group-item h5 {
+  color: #17a2b8;
+}
+
+/* Button hover effects */
+.text-end .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.text-end .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Toast notifications */
+.Toastify__toast {
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(176, 24, 24, 0.15);
+}
+
+.Toastify__toast--success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545;
+  color: #fff;
+}

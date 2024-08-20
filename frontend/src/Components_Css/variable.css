@@ -1,0 +1,13 @@
+/* Components_Css/variable.css */
+
+/* Define color variables for light and dark themes */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --bg-light: #ffffff;
+  --bg-dark: #343a40;
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+  --bg-gradient-light: linear-gradient(to right, #ffffff, #f8f9fa);
+  --bg-gradient-dark: linear-gradient(to right, #343a40, #495057);
+}
