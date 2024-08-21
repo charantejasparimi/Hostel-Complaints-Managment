@@ -36,6 +36,7 @@ const Login = ({ onClose, onSuccess }) => {
       })
       .then((data) => {
         localStorage.setItem("token", JSON.stringify(data.token));
+        localStorage.setItem("role", data.role);
         toast.success("Login successful!");
         navigate("/home");
         onSuccess(); // Set login state and close modal

@@ -33,6 +33,7 @@ const Signin = () => {
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem("token", JSON.stringify(data.token));
+        localStorage.setItem("role", data.role);
         console.log("Success:", data);
         toast.success("Sign in successful!");
         navigate("/home");

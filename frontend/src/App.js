@@ -13,8 +13,6 @@ import ServicesDone from "./Components/ServicesDone";
 import Homepage from "./Components/HomePage";
 import { UserProvider } from "./Components/UserContext";
 import "./App.css";
-import Signin from "./Login/Signin";
-import Login from "./Login/login";
 import EditProfile from "./Login/EditProfile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

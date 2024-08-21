@@ -19,7 +19,7 @@ const RequestComplaint = () => {
   const [userId, setUserId] = useState("");
   const { user } = useUser();
   const apiUrl = process.env.REACT_APP_BACKEND_URL;
-
+  const role = localStorage.getItem("role");
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
@@ -123,14 +123,17 @@ const RequestComplaint = () => {
                     </Col>
                     <Col md={4} className="text-end">
                       <ButtonGroup>
-                        <Button
-                          variant="success"
-                          onClick={() => handleDone(complaint._id)}
-                          className="me-2"
-                          disabled={complaint.serviced}
-                        >
-                          Done
-                        </Button>
+                        {role === "admin" && (
+                          <Button
+                            variant="success"
+                            onClick={() => handleDone(complaint._id)}
+                            className="me-2"
+                            disabled={complaint.serviced}
+                          >
+                            Done
+                          </Button>
+                        )}
+
                         <Button
                           variant="danger"
                           onClick={() => handleDelete(complaint._id)}
