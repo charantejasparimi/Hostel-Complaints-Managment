@@ -6,8 +6,8 @@ const Login = ({ onClose, onSuccess }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [frm, setFrm] = useState({
-    email: "a@d.com",
-    password: "hellochinna",
+    email: "teja@gmail.com",
+    password: "teja@gmail.com",
     role: "student", // Default role
   });
   const [error, setError] = useState(null);
