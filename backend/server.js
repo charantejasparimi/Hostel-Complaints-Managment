@@ -118,7 +118,7 @@ app.put("/complaints/:id", async (req, res) => {
 //   console.log("hel");
 // });
 
-port = process.env.PORT || 5000;
+port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
