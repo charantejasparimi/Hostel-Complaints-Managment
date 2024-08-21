@@ -8,11 +8,12 @@ const Dashboard = () => {
   const [totalComplaints, setTotalComplaints] = useState(0);
   const [totalServiced, setTotalServiced] = useState(0);
   const [loading, setLoading] = useState(true);
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
-      fetch("http://localhost:5000/api/user/validateToken", {
+      fetch(`${apiUrl}/api/user/validateToken`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,13 +46,13 @@ const Dashboard = () => {
   const fetchComplaintsStatistics = async (userId) => {
     try {
       const complaintsResponse = await fetch(
-        `http://localhost:5000/reg_complaints?serviced=false&id=${userId}`
+        `${apiUrl}/reg_complaints?serviced=false&id=${userId}`
       );
       const complaintsData = await complaintsResponse.json();
       setTotalComplaints(complaintsData.length);
 
       const servicedResponse = await fetch(
-        `http://localhost:5000/reg_complaints?serviced=true&id=${userId}`
+        `${apiUrl}/reg_complaints?serviced=true&id=${userId}`
       );
       const servicedData = await servicedResponse.json();
       setTotalServiced(servicedData.length);

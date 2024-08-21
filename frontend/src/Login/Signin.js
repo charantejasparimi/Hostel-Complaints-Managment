@@ -19,11 +19,11 @@ const Signin = () => {
     const { name, value } = e.target;
     setFrm((prevFrm) => ({ ...prevFrm, [name]: value }));
   };
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${API_BASE_URL}/api/endpoint`, {
+    fetch(`${apiUrl}/api/user/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

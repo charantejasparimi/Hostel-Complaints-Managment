@@ -16,11 +16,12 @@ const EditProfile = () => {
     confirmPassword: "",
   });
   const [error, setError] = useState("");
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
-      fetch("http://localhost:5000/api/user/validateToken", {
+      fetch(`${apiUrl}/api/user/validateToken`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +63,7 @@ const EditProfile = () => {
       return;
     }
 
-    fetch("http://localhost:5000/api/user/updateprofile", {
+    fetch(`${apiUrl}/api/user/updateprofile`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

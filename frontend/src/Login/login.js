@@ -16,11 +16,12 @@ const Login = ({ onClose, onSuccess }) => {
     const { name, value } = e.target;
     setFrm({ ...frm, [name]: value });
   };
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch("http://localhost:5000/api/user/login", {
+    fetch(`${apiUrl}/api/user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

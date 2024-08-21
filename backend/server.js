@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+app.get("/ak", (req, res) => {
+  res.send("Hello World");
+});
+
 app.post("/complaints", async (req, res) => {
   const { id, email, complaint, complainttype, serviced } = req.body;
   console.log(email, complaint, complainttype, serviced);
@@ -118,7 +122,7 @@ app.put("/complaints/:id", async (req, res) => {
 //   console.log("hel");
 // });
 
-port = process.env.PORT;
+port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

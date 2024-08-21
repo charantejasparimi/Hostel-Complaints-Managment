@@ -26,12 +26,13 @@ const MakeComplaint = () => {
       [name]: value,
     });
   };
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await toast.promise(
-        fetch("http://localhost:5000/complaints", {
+        fetch(`${apiUrl}/complaints`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -67,7 +68,7 @@ const MakeComplaint = () => {
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
-      fetch("http://localhost:5000/api/user/validateToken", {
+      fetch(`${apiUrl}/api/user/validateToken`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

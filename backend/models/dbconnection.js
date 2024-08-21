@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://localhost:27017";
+// const uri = "mongodb://localhost:27017";
 const client = new MongoClient(process.env.MONGO_URI);
 
 async function connectToMongoDB() {
@@ -7,6 +7,7 @@ async function connectToMongoDB() {
     await client.connect();
     console.log("Connected to MongoDB");
   } catch (error) {
+    console.error(process.env.MONGO_URI);
     console.error("Error connecting to MongoDB:", error);
     process.exit(1); // Exit process with failure
   }

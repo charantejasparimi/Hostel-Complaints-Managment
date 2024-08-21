@@ -10,11 +10,12 @@ const ServicedDone = () => {
   const { user } = useUser();
   const [complaints, setComplaints] = useState([]);
   const [userId, setUserId] = useState("");
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
-      fetch("http://localhost:5000/api/user/validateToken", {
+      fetch(`${apiUrl}/api/user/validateToken`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +46,7 @@ const ServicedDone = () => {
   useEffect(() => {
     if (userId) {
       axios
-        .get(`http://localhost:5000/reg_complaints?serviced=true&id=${userId}`)
+        .get(`${apiUrl}/reg_complaints?serviced=true&id=${userId}`)
         .then((response) => {
           setComplaints(response.data);
         })

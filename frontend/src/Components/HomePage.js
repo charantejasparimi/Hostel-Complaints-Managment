@@ -10,9 +10,10 @@ function HomePage() {
   const [showSignin, setShowSignin] = useState(false);
   const [login, setLogin] = useState(false);
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   const validateToken = (token) => {
-    fetch("http://localhost:5000/api/user/validateToken", {
+    fetch(`${apiUrl}/api/user/validateToken`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

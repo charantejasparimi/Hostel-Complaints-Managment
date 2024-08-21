@@ -18,10 +18,12 @@ const RequestComplaint = () => {
   const [complaints, setComplaints] = useState([]);
   const [userId, setUserId] = useState("");
   const { user } = useUser();
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
-      fetch("http://localhost:5000/api/user/validateToken", {
+      fetch(`${apiUrl}/api/user/validateToken`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +55,7 @@ const RequestComplaint = () => {
     const fetchComplaints = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/reg_complaints?serviced=false&id=${userId}`
+          `${apiUrl}/reg_complaints?serviced=false&id=${userId}`
         );
         setComplaints(response.data);
       } catch (error) {
@@ -66,7 +68,7 @@ const RequestComplaint = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/complaints/${id}`);
+      await axios.delete(`${apiUrl}/complaints/${id}`);
       setComplaints(complaints.filter((complaint) => complaint._id !== id));
       toast.success("Complaint deleted successfully!");
     } catch (error) {
@@ -77,7 +79,7 @@ const RequestComplaint = () => {
 
   const handleDone = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/complaints/${id}`, {
+      await axios.put(`${apiUrl}/complaints/${id}`, {
         serviced: true,
       });
       setComplaints(
