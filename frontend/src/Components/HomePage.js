@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Login from "../Login/login";
 import Signin from "../Login/Signin"; // Import Signin component
 import "./styles.css";
-
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 function HomePage() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignin, setShowSignin] = useState(false);
@@ -43,6 +44,61 @@ function HomePage() {
     }
   }, [login]);
 
+  const startTour = () => {
+    const driverObj = driver({
+      showProgress: true,
+      steps: [
+        {
+          element: ".navbar-brand", // Highlight the brand/logo in the navbar
+          popover: {
+            title: "Brand",
+            description: "This is the brand or logo section.",
+          },
+        },
+        {
+          element: ".navbar-nav .nav-link[href='#home']", // Highlight the Home link
+          popover: {
+            title: "Home Link",
+            description: "This link will take you to the home page.",
+          },
+        },
+        {
+          element:
+            ".navbar-nav .nav-link[href='https://charantejas.netlify.app/']", // Highlight the About Me link
+          popover: {
+            title: "About Me Link",
+            description: "This link directs you to the About Me page.",
+          },
+        },
+        {
+          element: ".navbar-nav .nav-link[href='#feedback']", // Highlight the Feedback link
+          popover: {
+            title: "Feedback Link",
+            description: "This link takes you to the feedback section.",
+          },
+        },
+        {
+          element: ".nav-link-custom[href='#']" // Highlight the Login link
+            .replace(/\s+/g, "."),
+          popover: {
+            title: "Login Link",
+            description: "Click this to open the Login modal.",
+          },
+        },
+        {
+          element: ".nav-link-custom[href='h']" // Highlight the Signin link
+            .replace(/\s+/g, "."),
+          popover: {
+            title: "Signin Link",
+            description: "Click this to open the Signin modal.",
+          },
+        },
+      ],
+    });
+
+    driverObj.drive(); // Start the tour
+  };
+
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => {
     if (localStorage.getItem("token") && !login) {
@@ -77,7 +133,11 @@ function HomePage() {
               <Nav.Link onClick={handleShowLogin} className="nav-link-custom">
                 Login
               </Nav.Link>
-              <Nav.Link onClick={handleShowSignin} className="nav-link-custom">
+              <Nav.Link
+                onClick={handleShowSignin}
+                className="nav-link-custom"
+                href="h"
+              >
                 Signin
               </Nav.Link>
             </Nav>
@@ -89,7 +149,9 @@ function HomePage() {
           <h1>Welcome to the Hostel Complaint Management System</h1>
         </div>
         <p>Manage complaints efficiently and effectively.</p>
-        <button className="btn btn-primary">Get Started</button>
+        <button className="btn btn-primary" onClick={startTour}>
+          Get Started
+        </button>
       </div>
 
       {/* Login Modal */}
