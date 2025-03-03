@@ -15,6 +15,10 @@ The **Hostel Management System** is a web application designed to streamline hos
     <td><img src="./admin_dashboard.png" width="300"></td>
   </tr>
 </table>
+
+## Demo Video
+Check out the **YouTube demo**: [Watch Here](https://www.youtube.com/watch?v=115JOXmdFKQ)
+
 ## Features
 - **Student Dashboard**: View hostel details, request room changes, and manage personal information.
 - **Admin Dashboard**: Manage student details, assign rooms, and track hostel activities.
@@ -80,10 +84,6 @@ JWT_SECRET=your_jwt_secret_key
 FIREBASE_API_KEY=your_firebase_api_key
 ```
 
-
-
-## Demo Video
-Check out the **YouTube demo**: [Watch Here](https://www.youtube.com/watch?v=115JOXmdFKQ)
 
 ## Contributing
 Feel free to contribute by creating a pull request or opening an issue.
