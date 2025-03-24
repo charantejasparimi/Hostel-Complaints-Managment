@@ -136,7 +136,6 @@ function HomePage() {
               <Nav.Link
                 onClick={handleShowSignin}
                 className="nav-link-custom"
-                href="h"
               >
                 Signin
               </Nav.Link>
