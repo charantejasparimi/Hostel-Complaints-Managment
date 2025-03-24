@@ -133,12 +133,8 @@ function HomePage() {
               <Nav.Link onClick={handleShowLogin} className="nav-link-custom">
                 Login
               </Nav.Link>
-              <Nav.Link
-                onClick={handleShowSignin}
-                className="nav-link-custom"
-                href="h"
-              >
-                Signin
+              <Nav.Link onClick={handleShowSignin} className="nav-link-custom">
+                Sign In
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

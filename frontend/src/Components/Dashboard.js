@@ -37,6 +37,7 @@ const Dashboard = () => {
         })
         .catch((error) => {
           console.error("Error:", error);
+          localStorage.clear();
           toast.error("Failed to fetch user data. Please log in again.");
         })
         .finally(() => setLoading(false));

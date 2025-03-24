@@ -1,8 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const bodyParser = require("body-parser"); // to parse the incoming requests with JSON payloads
+const cors = require("cors"); //
 const app = express();
 const { db, collection } = require("./models/dbconnection");
 const { ObjectId } = require("mongodb"); // Add this line to import ObjectId
@@ -17,7 +17,7 @@ dotenv.config(); // to use the .env file
 app.use("/api/user", userlogin);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.json({ message: "Backend server is running successfully!" });
 });
 
 app.get("/ak", (req, res) => {
@@ -38,6 +38,10 @@ app.post("/complaints", async (req, res) => {
     console.error("Error inserting complaint:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
+});
+
+app.get("/", (req, res) => {
+  res.json({ message: "Backend server is running successfully!" });
 });
 
 app.get("/reg_complaints", async (req, res) => {
@@ -111,6 +115,7 @@ app.put("/complaints/:id", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
 // app.get("/api/notes/t/:tt", (req, res) => {
 //   const n = data.find((tt) => tt.title === decodeURIComponent(req.params.tt));
 //   res.json(n);
