@@ -17,7 +17,7 @@ dotenv.config(); // to use the .env file
 app.use("/api/user", userlogin);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.json({ message: "Backend server is running successfully!" });
 });
 
 app.get("/ak", (req, res) => {
